@@ -25,7 +25,7 @@ function changeAppPage(gameScreen) {
 
 
 
-/*
+
 //Get content
 function getPartialView(screen) {
   var contentLoaded ;
@@ -39,37 +39,7 @@ function getPartialView(screen) {
 
 
 } //close getPartialView function
-*/
-
-
-function getPartialView(screen) {
-
-
-
-  var contentLoaded;
-
-  console.log("screen content injection for " + screen);
-
-
-  //Get HTML via a promise
-  var myHeaders = new Headers();
-  var myInit = {
-    method: 'GET',
-    headers: myHeaders,
-    mode: 'cors',
-    cache: 'default'
-  };
-  var myRequest = new Request('partialViews/' + screen + '.html', myInit);
-  fetch(myRequest).then(function(response) {
-    return response.text();
-  }).then(function(data) {
-    $(".contentRoot").append(data);
-    contentLoaded = true;
-
-  });
 
 
 
 
-
-} //close getPartialView function
